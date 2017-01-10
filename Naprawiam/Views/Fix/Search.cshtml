@@ -1,0 +1,10 @@
+﻿@model Naprawiam.ViewModel.FixListViewModel
+@{
+    ViewBag.Title = "List wszystkich instrukcji";
+}
+
+<h2>Wyszukane instrukcje</h2>
+@Html.EditorFor(model => model.Guides)
+
+
+@Html.DisplayFor(model => model.Guides)

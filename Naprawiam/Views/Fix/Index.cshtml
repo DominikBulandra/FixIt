@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<h2 id="FixSearch">Szukaj Instrukcji naprawy</h2>
+<div id="FixSearchText">
+   @using (Html.BeginForm("search", "Fix", FormMethod.Post))
+   {
+       <input type="text" name="q" id="entertext"/>
+       <input type="submit" class="btn btn-warning" value="Szukaj"/>
+   }
+</div>

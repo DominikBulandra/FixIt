@@ -1,0 +1,94 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+#content 
+{
+   text-align:center;
+   padding-top:10px;
+    margin-top:25%;
+    min-height:1000px;
+    width:100%;
+    background-color:darkorange;
+    position: relative;
+    z-index: 2;
+}
+#image {
+    position: absolute;
+    z-index: -2;
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+}
+#logo {
+    margin-top: 15%;
+    width:50%;
+    height:auto;
+    margin-left:25%;
+    position: absolute;
+    z-index: 0;
+    display: block;
+    cursor: pointer;
+    
+}
+#createditor{
+    max-width: 100%;
+}
+#createlabel{
+    float:none;
+    text-align: center;
+}
+#checkbox{
+    float:none;
+    }
+#listbutton{
+        width: 50%;
+    height: 70px;
+        
+}
+#createbutton{
+        width: 100px;
+    height: 70px;
+        
+}
+hr {
+   
+    border: 2;
+    border-top: 1px solid rgba(228, 108, 3, 0.44);
+}
+-content {
+    
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgba(99, 58, 25, 0.81);
+    color:White;
+}
+
+
+#entertext {
+    min-width:260px;
+    height:45px;
+    border-radius:25px;
+    background-color:transparent ;
+    font-family:'DejaVu Sans Mono';
+    text-align: center;
+    color:rgba(153, 41, 0, 1);
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+.modal-backdrop{
+    z-index:0;
+}
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}

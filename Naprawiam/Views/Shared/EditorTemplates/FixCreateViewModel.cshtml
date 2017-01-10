@@ -1,0 +1,82 @@
+﻿@model Naprawiam.ViewModel.FixCreateViewModel
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @*<h4>FixCreateViewModel</h4>*@
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.idu, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.idu, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.idu, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.Adres, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-12">
+                
+                <a href="@($"{Model.Adres}")" class="btn btn-info" id="listbutton">@Model.Description</a>
+
+                @if (User.Identity.Name == Model.idu)
+                {
+
+                    <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">Usuń</button>
+
+                    <!-- Modal -->
+                    <div id="myModal" class="modal fade" style="top:50px;" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Usuń</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Napewno usunąć link?</p>
+                                    @Html.ActionLink("Usuń", "DeleteAdres", "Fix", routeValues: new
+                               {
+                                   Id = Model.StringObjectId
+                               }, htmlAttributes: null
+)
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+
+                    @*@Html.EditorFor(model => model.Adres, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Adres, "", new { @class = "text-danger" })*@
+
+</div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-10">
+                @*@Html.LabelForModel(Model.Description)*@
+                @*@Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>*@
+    </div>
+}
+
+<div>
+    @*@Html.ActionLink("Back to List", "Index")*@
+</div>
