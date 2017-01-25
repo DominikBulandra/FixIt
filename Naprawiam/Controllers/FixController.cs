@@ -213,7 +213,9 @@ namespace Naprawiam.Controllers
               
                 Process pcx = new System.Diagnostics.Process();
                 ProcessStartInfo pcix = new System.Diagnostics.ProcessStartInfo();
-                pcix.FileName = @"C:\Users\Dominik\Documents\visual studio 2015\Projects\Naprawiam\PhantomWebGrab\bin\Debug\\PhantomWebGrab.exe";
+                var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "../PhantomWebGrab/bin/Debug//PhantomWebGrab.exe");
+                //pcix.FileName = @"C:\Users\Dominik\Documents\visual studio 2015\Projects\Naprawiam\PhantomWebGrab\bin\Debug\\PhantomWebGrab.exe";
+                pcix.FileName = path;
                 //pcix.Arguments = WrkGalId.ToString() + " " + websiteId.ToString() + "" + " " + "19" + " \"" + dFileName + "\" ";
                 pcix.UseShellExecute = true;
                 pcix.WindowStyle = ProcessWindowStyle.Hidden;
@@ -242,8 +244,7 @@ namespace Naprawiam.Controllers
                 // If required by the server, set the credentials.
                 request.Credentials = CredentialCache.DefaultCredentials;
                 // Get the response.
-                response = request.GetResponse();
-                //Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+                response = request.GetResponse();              
                 Stream dataStream = response.GetResponseStream();
                 IsResponsed = true;
                 response.Close();

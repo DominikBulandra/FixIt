@@ -25,10 +25,10 @@
                 @if (User.Identity.Name == Model.idu)
                 {
 
-                    <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">Usuń</button>
-
+                    <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target=@($"{'#'+Model.StringObjectId}")>Usuń</button>
+                
                     <!-- Modal -->
-                    <div id="myModal" class="modal fade" style="top:50px;" role="dialog">
+                    <div id="@($"{Model.StringObjectId}")" class="modal fade" style="top:50px;" role="dialog">
                         <div class="modal-dialog">
 
                             <!-- Modal content-->
@@ -38,7 +38,7 @@
                                     <h4 class="modal-title">Usuń</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <p>Napewno usunąć link?</p>
+                                    <p>Napewno usunąć link? @Model.Description</p>
                                     @Html.ActionLink("Usuń", "DeleteAdres", "Fix", routeValues: new
                                {
                                    Id = Model.StringObjectId
