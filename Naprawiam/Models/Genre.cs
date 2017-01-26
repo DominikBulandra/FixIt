@@ -12,9 +12,7 @@ namespace Naprawiam.Models
         public string Name { get; set; }
         public string Description { get; set; }
 
-        //The below attribute excludes the Albums
-        //property from JSON serialization, preventing
-        //circular references when serializing albums.
+     
         [JsonIgnore]
         public List<elastic> Adresses { get; set; }
     }
